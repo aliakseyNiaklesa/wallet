@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// TODO: should be object and could User profile ???
 class Budget extends StateNotifier<int> {
   Budget() : super(0);
 

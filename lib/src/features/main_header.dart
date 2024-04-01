@@ -20,7 +20,10 @@ class MainHeader extends ConsumerWidget {
             Icon(CupertinoIcons.settings),
           ],
         ),
-        Text('$budget'),
+        Text(
+          '\$$budget',
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        ),
       ],
     );
   }

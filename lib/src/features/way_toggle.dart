@@ -9,19 +9,21 @@ class WayToggle extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final way = ref.watch(wayProvider);
     onValueChanged(WAY? way) {
-      print(way);
       if (way != null) {
-         ref.read(wayProvider.notifier).setWay(way);
+        ref.read(wayProvider.notifier).setWay(way);
       }
     }
 
-    return CupertinoSlidingSegmentedControl<WAY>(
-        thumbColor: Color.fromARGB(255, 28, 201, 189),
-        groupValue: way,
-        children: const <WAY, Widget>{
-          WAY.expense: Text('Expenses'),
-          WAY.income: Text('Income'),
-        },
-        onValueChanged: onValueChanged);
+    return SizedBox(
+      width: double.infinity,
+      child: CupertinoSlidingSegmentedControl<WAY>(
+          thumbColor: Color.fromARGB(255, 28, 201, 189),
+          groupValue: way,
+          children: const <WAY, Widget>{
+            WAY.expense: Text('Expenses'),
+            WAY.income: Text('Income'),
+          },
+          onValueChanged: onValueChanged),
+    );
   }
 }
