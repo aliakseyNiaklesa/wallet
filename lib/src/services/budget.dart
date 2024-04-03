@@ -4,11 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class Budget extends StateNotifier<int> {
   Budget() : super(0);
 
-  void plus(int mount) {
+  void add(int mount) {
     state = state + mount;
   }
 
-  void minus(int mount) {
+  void remove(int mount) {
     state = state - mount;
   }
 }

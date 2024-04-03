@@ -14,7 +14,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/add',
       builder: (BuildContext context, GoRouterState state) {
-        return const Add();
+        return Add();
       },
     ),
   ],

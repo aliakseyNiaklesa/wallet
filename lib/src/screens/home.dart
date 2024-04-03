@@ -28,7 +28,7 @@ class Home extends ConsumerWidget {
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,        floatingActionButton: FloatingActionButton(
           onPressed: handleOnAdd,
           child: Icon(CupertinoIcons.add),
         ),
