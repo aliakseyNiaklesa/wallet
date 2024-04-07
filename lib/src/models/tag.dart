@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
+
 class Tag {
   String title;
-  String icon;
+  IconData icon;
+  bool isSelected;
 
-  Tag({required this.title, required this.icon});
+  Tag({required this.title, required this.icon, this.isSelected = false});
 }
