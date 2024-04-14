@@ -9,8 +9,8 @@ import 'package:wallet/src/features/side_header.dart';
 import 'package:wallet/src/features/way_toggle.dart';
 import 'package:wallet/src/models/tag.dart';
 import 'package:wallet/src/services/budget.dart';
+import 'package:wallet/src/services/expense_tags.dart';
 import 'package:wallet/src/services/way.dart';
-
 
 // Add state ?
 class Add extends ConsumerWidget {
@@ -27,26 +27,14 @@ class Add extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final way = ref.watch(wayProvider);
-    final List<Tag> tags = [
-      Tag(
-        title: 'title 1',
-        icon: CupertinoIcons.add_circled,
-      ),
-      Tag(title: 'title 2', icon: CupertinoIcons.asterisk_circle),
-      Tag(title: 'title 3', icon: CupertinoIcons.asterisk_circle)
-    ];
+    final List<Tag> tags = ref.watch(expenseTagsProvider);
 
-    handleOnSelect(tag) {
-      tag.isSelected = true;
-    }
-
-    List<TagWidget> tagWidgets = tags
-        .map((tag) => TagWidget(tag: tag, onClick: () => handleOnSelect(tag)))
-        .toList();
+    List<TagWidget> tagWidgets =
+        tags.map((tag) => TagWidget(tag: tag)).toList();
 
     handleOnAdd() {
-      tagWidgets.forEach((tag) {
-        print(tag.tag.isSelected.toString() + " - " + tag.tag.title);
+      tags.forEach((tag) {
+        print(tag.isSelected.toString() + " - " + tag.title);
       });
       // if (way == WAY.income) {
       //   ref.read(budgetProvider.notifier).add(int.parse(_controller.text));

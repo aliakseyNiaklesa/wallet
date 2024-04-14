@@ -1,8 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wallet/src/models/expense.dart';
 
 class ExpenseRecord extends ConsumerWidget {
-  const ExpenseRecord({super.key});
+  // const ExpenseRecord({super.key});
+  Expense expense;
+
+  ExpenseRecord({
+    Key? key,
+    required this.expense,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -12,7 +19,7 @@ class ExpenseRecord extends ConsumerWidget {
         decoration: const BoxDecoration(
             color: Color.fromARGB(255, 28, 201, 189),
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
@@ -22,7 +29,7 @@ class ExpenseRecord extends ConsumerWidget {
                     padding: EdgeInsets.only(right: 20),
                     child: Icon(CupertinoIcons.airplane),
                   ),
-                  Text('Travel')
+                  Text(expense.tag.title)
                 ],
               ),
             ),
@@ -32,7 +39,7 @@ class ExpenseRecord extends ConsumerWidget {
                   Text('25%'),
                   Padding(
                     padding: EdgeInsets.only(left: 20),
-                    child: Text('\$130'),
+                    child: Text('\$' + expense.price.toString()),
                   )
                 ],
               ),

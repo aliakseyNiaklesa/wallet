@@ -1,10 +1,9 @@
-import 'package:flutter/foundation.dart';
+import 'package:wallet/src/models/tag.dart';
 
 class Expense {
   DateTime dateTime;
   double price;
-  Category category;
+  Tag tag;
 
-  Expense(
-      {required this.dateTime, required this.price, required this.category});
+  Expense({required this.dateTime, required this.price, required this.tag});
 }
