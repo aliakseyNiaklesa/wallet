@@ -24,8 +24,8 @@ class Expenses extends StateNotifier<List<Expense>> {
               tag: Tag(uuid: '134', title: '123', icon: CupertinoIcons.add))
         ]);
 
-  void increment() {
-    // state = state + 1;
+  void add(Expense expense) {
+    state = [...state, expense];
   }
 }
 

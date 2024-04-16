@@ -13,11 +13,11 @@ class ExpenseTags extends StateNotifier<List<Tag>> {
           Tag(
               uuid: 'd175f1a8-f400-4bdc-851b-3ec59a66d297',
               title: 'title 2',
-              icon: CupertinoIcons.asterisk_circle),
+              icon: CupertinoIcons.ant_fill),
           Tag(
               uuid: 'be01cb77-f755-42c4-b51b-22f291b9516b',
               title: 'title 3',
-              icon: CupertinoIcons.asterisk_circle)
+              icon: CupertinoIcons.zzz)
         ]);
 
   void updateTag(String uuid) {

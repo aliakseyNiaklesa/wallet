@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wallet/src/models/expense.dart';
 
 class ExpenseRecord extends ConsumerWidget {
-  // const ExpenseRecord({super.key});
   Expense expense;
 
   ExpenseRecord({
@@ -27,7 +26,7 @@ class ExpenseRecord extends ConsumerWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(right: 20),
-                    child: Icon(CupertinoIcons.airplane),
+                    child: Icon(expense.tag.icon),
                   ),
                   Text(expense.tag.title)
                 ],
