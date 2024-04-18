@@ -7,21 +7,21 @@ class Expenses extends StateNotifier<List<Expense>> {
   Expenses()
       : super([
           Expense(
-              dateTime: DateTime.now(),
-              price: 130,
-              tag: Tag(uuid: '134', title: '123', icon: CupertinoIcons.add)),
+            dateTime: DateTime.now(),
+            price: 130,
+          ),
           Expense(
-              dateTime: DateTime.now(),
-              price: 130,
-              tag: Tag(uuid: '134', title: '123', icon: CupertinoIcons.add)),
+            dateTime: DateTime.now(),
+            price: 130,
+          ),
           Expense(
-              dateTime: DateTime.now(),
-              price: 130,
-              tag: Tag(uuid: '134', title: '123', icon: CupertinoIcons.add)),
+            dateTime: DateTime.now(),
+            price: 130,
+          ),
           Expense(
-              dateTime: DateTime.now(),
-              price: 130,
-              tag: Tag(uuid: '134', title: '123', icon: CupertinoIcons.add))
+            dateTime: DateTime.now(),
+            price: 130,
+          )
         ]);
 
   void add(Expense expense) {

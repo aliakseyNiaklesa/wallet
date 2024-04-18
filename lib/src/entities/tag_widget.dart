@@ -14,8 +14,8 @@ class TagWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     handleOnTab() {
-      final expenseTag =
-          ref.read(expenseTagsProvider.notifier).updateTag(tag.uuid);
+      // final expenseTag =
+      //     ref.read(expenseTagsProvider.notifier).updateTag(tag.uuid);
     }
 
     return GestureDetector(
@@ -31,7 +31,7 @@ class TagWidget extends ConsumerWidget {
           children: [
             Icon(
               tag.icon,
-              color: tag.isSelected
+              color: true
                   ? CupertinoColors.activeBlue
                   : CupertinoColors.black,
             ),
@@ -39,7 +39,7 @@ class TagWidget extends ConsumerWidget {
             Text(
               tag.title,
               style: TextStyle(
-                color: tag.isSelected
+                color: true
                     ? CupertinoColors.activeBlue
                     : CupertinoColors.black,
               ),

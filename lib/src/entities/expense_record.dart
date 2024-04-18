@@ -26,9 +26,9 @@ class ExpenseRecord extends ConsumerWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(right: 20),
-                    child: Icon(expense.tag.icon),
+                    child: Icon(CupertinoIcons.add_circled),
                   ),
-                  Text(expense.tag.title)
+                  Text('tesxt')
                 ],
               ),
             ),

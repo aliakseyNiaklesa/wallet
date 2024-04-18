@@ -29,22 +29,25 @@ class Add extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final way = ref.watch(wayProvider);
-    final List<Tag> expenseTags = ref.watch(expenseTagsProvider);
+    // final List<Tag> expenseTags = ref.watch(expenseTagsProvider);
 
-    List<TagWidget> tagWidgets =
-        expenseTags.map((tag) => TagWidget(tag: tag)).toList();
+    List<TagWidget> tagWidgets = [
+      TagWidget(
+        tag: Tag(uuid: 'uuid', title: 'title', icon: CupertinoIcons.add),
+      )
+    ];
 
     handleOnAdd() {
-      final value = _controller.text;
-      if (way == WAY.income) {
-        ref.read(budgetProvider.notifier).add(int.parse(value));
-      } else {
-        final tag = expenseTags.firstWhere((tag) => tag.isSelected);
-        ref.read(expensesProvider.notifier).add(Expense(
-            dateTime: DateTime.now(), price: double.parse(value), tag: tag));
-        ref.read(budgetProvider.notifier).remove(int.parse(value));
-      }
-      context.go('/');
+      // final value = _controller.text;
+      // if (way == WAY.income) {
+      //   ref.read(budgetProvider.notifier).add(int.parse(value));
+      // } else {
+      //   final tag = expenseTags.firstWhere((tag) => tag.isSelected);
+      //   ref.read(expensesProvider.notifier).add(Expense(
+      //       dateTime: DateTime.now(), price: double.parse(value), tag: tag));
+      //   ref.read(budgetProvider.notifier).remove(int.parse(value));
+      // }
+      // context.go('/');
     }
 
     return CupertinoPageScaffold(

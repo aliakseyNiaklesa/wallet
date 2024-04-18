@@ -21,8 +21,6 @@ class IncomeTags extends StateNotifier<List<Tag>> {
         ]);
 
   void updateTag(String uuid) {
-    final tag = state.firstWhere((tag) => tag.uuid == uuid);
-    tag.isSelected = !tag.isSelected;
 
     state = List.of(state);
   }
